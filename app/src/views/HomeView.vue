@@ -1,4 +1,13 @@
+<template>
+    <div class="container">
+    <h1>NYC Restaurant Inspections</h1>
+    <BarChart />
+  </div>
+</template>
+
 <script>
+import{ Bar } from 'vue-chart-js'
+import BarChart from 'path/to/component/BarChart'
 import { ref, onMounted } from "vue";
 const restaurants = ref("")
 async function getRestaurantData() {
@@ -6,13 +15,16 @@ async function getRestaurantData() {
   let data = await res.json();
   restaurants.name = data.dba;
 }
-onMounted(() => {
+onMounted(()=>{
   getRestaurantData();
-});
+})
+export default {
+  name: 'App',
+  components: { BarChart }
+}
 </script>
-<template>
-  <div>
-    <h1>NYC Restaurant Inspections</h1>
-    <h2>Restaurants in NYC</h2>
-  </div>
-</template>
+
+<style>
+
+</style>
+

@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        shrikhand: ["Shrikhand", "serif"]
+        signika: ["Signika Negative", "sans-serif"]
       }
     },
   },
