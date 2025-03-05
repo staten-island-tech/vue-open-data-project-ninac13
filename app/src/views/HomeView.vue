@@ -1,13 +1,17 @@
 <template>
-    <div class="container">
+  <div class="container">
     <h1>NYC Restaurant Inspections</h1>
-    <BarChart />
+    <RestaurantCard
+      v-for="(restaurant, index) in restaurant"
+      :key="restaurant.name"
+      :id="index + 1"
+    />
   </div>
+  
 </template>
 
 <script>
-import{ Bar } from 'vue-chart-js'
-import BarChart from 'path/to/component/BarChart'
+import RestaurantCard from "@/components/RestaurantCard.vue";
 import { ref, onMounted } from "vue";
 const restaurants = ref("")
 async function getRestaurantData() {
@@ -18,10 +22,7 @@ async function getRestaurantData() {
 onMounted(()=>{
   getRestaurantData();
 })
-export default {
-  name: 'App',
-  components: { BarChart }
-}
+
 </script>
 
 <style>
