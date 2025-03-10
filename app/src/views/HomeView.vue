@@ -1,28 +1,20 @@
 <template>
-  <div class="container">
+    <div class="container">
     <h1>NYC Restaurant Inspections</h1>
-    <RestaurantCard
-      v-for="(restaurant, index) in restaurant"
-      :key="restaurant.name"
-      :id="index + 1"
-    />
+    <button>Ratings Per ZipCode</button>
+    <button>Ratings Per ZipCode</button>
+    <RatingGraph />
   </div>
-  
 </template>
 
 <script>
-import RestaurantCard from "@/components/RestaurantCard.vue";
-import { ref, onMounted } from "vue";
-const restaurants = ref("")
-async function getRestaurantData() {
-  let res = await fetch("https://data.cityofnewyork.us/resource/43nn-pn8j.json");
-  let data = await res.json();
-  restaurants.name = data.dba;
-}
-onMounted(()=>{
-  getRestaurantData();
-})
+import { Bar } from 'vue-chartjs'
+import RatingGraph from '@/components/RatingGraph.vue';
 
+export default {
+  name: 'HomeView',
+  components: { RatingGraph }
+}
 </script>
 
 <style>
