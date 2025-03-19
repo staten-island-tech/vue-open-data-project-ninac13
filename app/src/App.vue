@@ -1,13 +1,9 @@
-<script setup>
-
-</script>
-
 <template>
-  <header>
-    <div class="wrapper">
-      <RouterView />
-    </div>
-  </header>
-
- 
+  <h1>NYC Restaurant Inspections</h1>
+  <nav>
+    <RouterLink to="/">Go Back to Home</RouterLink>
+  </nav>
+  <main>
+    <RouterView />
+  </main>
 </template>
