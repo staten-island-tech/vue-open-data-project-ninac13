@@ -1,14 +1,15 @@
 <template>
  <div>
-    <h2>{{ restaurant.name }}</h2>
-    <h2>{{ restaurant.borough }}</h2>
+    <h2>{{ name }}</h2>
+    <h2>{{ borough }}</h2>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+defineProps({
+    name: String,
+    borough: String,
+})
 </script>
 
 <style>
