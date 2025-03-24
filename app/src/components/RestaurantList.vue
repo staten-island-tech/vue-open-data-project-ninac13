@@ -18,7 +18,7 @@ onMounted(()=>{
 </script>
 
 <template>
-    <div class="container">
+    <div class="col-span-3 flex-1 ml-28 container flex justify-center flex-wrap gap-8">
     <Restaurants v-for="restaurant in restaurants"
       :key="restaurant.dba"
       :name="restaurant.dba"
