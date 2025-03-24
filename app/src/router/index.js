@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import RatingGraph from '../components/RatingGraph.vue'
-import PieChart from '../components/PieChart.vue'
-
+import NumbersGraph from '../components/NumbersGraph.vue'
+import InputChart from '../components/InputChart.vue'
+import CriticalGraph from '../components/CriticalGraph.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -12,20 +12,28 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/rating',
-      name: 'Rating Graph',
+      path: '/numbers',
+      name: 'Bar Graph',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: RatingGraph,
+      component: NumbersGraph,
     },
     {
-      path: '/piechart',
-      name: 'Pie Chart',
+      path: '/criticalchart',
+      name: 'Critical Graph',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: PieChart,
+      component: CriticalGraph,
+    },
+    {
+      path: '/inputchart',
+      name: 'Input Chart',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: InputChart,
     }
   ],
 })

@@ -7,7 +7,7 @@ async function getRestaurantData() {
     try {
         let res = await fetch("https://data.cityofnewyork.us/resource/43nn-pn8j.json");
         let data = await res.json();
-        restaurants.value = data;
+        restaurants.value = data.slice(0,50);
     } catch (error) {
         console.log("There was an error", error);
     }
