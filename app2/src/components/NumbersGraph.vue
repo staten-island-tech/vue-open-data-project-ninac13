@@ -25,7 +25,7 @@ export default {
       datasets: [
         {
           label: 'Number of Restaurants',
-          backgroundColor: '#42A5F5',
+          backgroundColor: '#779ECB',
           data: [0, 0, 0, 0, 0]
         }
       ]

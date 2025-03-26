@@ -25,7 +25,7 @@
         datasets: [
           {
             label: 'Number of Critical Flags',
-            backgroundColor: '#F6D7E8',
+            backgroundColor: '#A8B5E0',
             data: [0, 0, 0, 0, 0]
           }
         ]

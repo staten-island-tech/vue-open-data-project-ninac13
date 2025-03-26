@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div>
-      <button v-for="(label, index) in boroughs" :key="index" @click="setBoroughData(label)">
-        {{ label }}
+    <div class="flex justify-center mb-5 gap-12">
+      <button class="cursor-pointer border-2 rounded-lg mx-5 px-5 py-1 bg-base-100 font-bold shadow-lg hover:border-4" v-for="(borough, number) in boroughs" :key="number" @click="setBoroughData(borough)">
+        {{ borough }}
       </button>
     </div>
     
@@ -23,6 +23,7 @@
  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
  
  export default {
+  
    name: 'BarChart',
    components: { Bar },
    setup() {
@@ -33,24 +34,23 @@
        labels: ['Critical', 'Not Critical', 'Not Applicable'],
        datasets: [
          {
-           label: 'Number of Restaurant Flags',
-           backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+           backgroundColor: ['#A8B5E0', '#779ECB', '#A6B6CF'],
            data: [0, 0, 0]
-         }
+         },
        ]
      });
  
      const chartOptions = {
        responsive: true,
        plugins: {
-         legend: { display: true },
+         legend: { display: false },
          title: { display: true, text: 'Number of Various Restaurant Flags by Borough' }
        },
        scales: {
          y: {
            title: {
              display: true,
-             text: 'Various Restaurant Flags',
+             text: 'Number of Restaurant Flags',
              font: {
                size: 14,
                weight: 'bold'
@@ -60,7 +60,7 @@
          x: {
            title: {
              display: true,
-             text: 'Number of Flags',
+             text: 'Types of Flags',
              font: {
                size: 14,
                weight: 'bold'
@@ -69,7 +69,6 @@
          }
        }
      };
- 
      async function getRestaurantData() {
        try {
          let res = await fetch("https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=5000");
